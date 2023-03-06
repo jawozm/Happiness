@@ -1,0 +1,44 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    int happinessLevel = 0;  // initialize happiness level to 0
+    string name;
+    cout << "What is your name? ";
+    getline(cin, name);  // read input for name with spaces
+    cout << "Welcome, " << name << "!" << endl;
+
+    // Ask user about their day
+    cout << "How was your day today? (1-10) ";
+    cin >> happinessLevel;
+
+    // Check if happiness level is within range
+    if (happinessLevel < 1) {
+        happinessLevel = 1;
+    }
+    else if (happinessLevel > 10) {
+        happinessLevel = 10;
+    }
+
+    // Print out happiness level with corresponding message
+    cout << "Your happiness level today is: " << happinessLevel << endl;
+    if (happinessLevel <= 3) {
+        cout << "I'm sorry to hear that. Is there anything I can do to help?" << endl;
+    }
+    else if (happinessLevel <= 6) {
+        cout << "That's not too bad. Let's work together to make tomorrow even better!" << endl;
+    }
+    else if (happinessLevel <= 8) {
+        cout << "Great job! You're on your way to living a good life!" << endl;
+    }
+    else {
+        cout << "Wow, you're doing amazing! Keep up the good work!" << endl;
+    }
+
+    // Give user a motivational message
+    cout << "Remember, living a good life is about making progress, not perfection." << endl;
+
+    return 0;
+}
